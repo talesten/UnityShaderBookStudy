@@ -51,7 +51,8 @@ Shader"UnityStepBook/Chapter 7/Ramp Texture"
                     o.pos = UnityObjectToClipPos(v.vertex);
                     o.worldNormal = UnityObjectToWorldNormal(v.normal);
                     o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
-                    o.uv = TRANSFORM_TEX(v.texcoord, _RampTex);
+                    //o.uv = TRANSFORM_TEX(v.texcoord, _RampTex);
+                    o.uv = v.texcoord.xy*_RampTex_ST.xy + _RampTex_ST.zw;
                     return  o;
                 }
 
@@ -62,7 +63,8 @@ Shader"UnityStepBook/Chapter 7/Ramp Texture"
 
                     fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz;
                     fixed  halfLambert = 0.5*dot(worldNormal, worldLightDir) + 0.5;
-                    fixed3 diffuseColor = tex2D(_RampTex, fixed2(halfLambert, halfLambert)).rgb*_Color.rgb;
+                    //fixed3 diffuseColor = tex2D(_RampTex, fixed2(halfLambert, halfLambert)).rgb*_Color.rgb;//test:传入fixed(0,0)导致整个一种颜色是因为没有把模型的法线加入计算 导致光照均匀
+                    fixed3 diffuseColor = tex2D(_RampTex, fixed2(halfLambert, 0)).rgb*_Color.rgb;//传入0得到一样的结果 因为RampTex纹理纵向值不变
                     fixed3 diffuse = _LightColor0.rgb*diffuseColor;
 
                     fixed3  viewDir = normalize(UnityWorldSpaceViewDir(i.worldPos));
@@ -74,4 +76,5 @@ Shader"UnityStepBook/Chapter 7/Ramp Texture"
         ENDCG
         }
     }
+    FallBack"Specular"
 }
