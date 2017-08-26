@@ -117,7 +117,12 @@ Shader"UnityStepBook/Chapter 9/Forward Rendering "
                 #else
                     #if defined(POINT)
                         float3 lightCoord = mul(unity_WorldToLight, float4(i.worldPos, 1)).xyz;
-                        fixed atten = tex2D(_LightTexture0, dot(lightCoord, lightCoord).rr).UNITY_ATTEN_CHANNEL;
+                        fixed atten = tex2D(_LightTexture0, (dot(lightCoord, lightCoord)).rr).UNITY_ATTEN_CHANNEL;
+                        //fixed atten = tex2D(_LightTexture0, lightCoord.rr).UNITY_ATTEN_CHANNEL;
+                        
+                        //float a = //dot(lightCoord, lightCoord) * 2 - 1;
+                        //float a = -1;
+                        //fixed  atten = tex2D(_LightTexture0, a.xx).UNITY_ATTEN_CHANNEL;
                     #elif defined(SPOT)
                         float3 lightCoord = mul(unity_WorldToLight, float4(i.worldPos, 1));
                         fixed atten = (lightCoord.z > 0)*tex2D(_LightTexture0, lightCoord.xy / lightCoord.w + 0.5).w*tex2D(_LightTextureB0, dot(lightCoord, lightCoord).rr).UNITY_ATTEN_CHANNEL;
