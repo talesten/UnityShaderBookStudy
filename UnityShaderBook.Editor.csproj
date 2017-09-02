@@ -120,6 +120,7 @@
     <Compile Include="Assets\Editor\Chapter10\RenderCubemapWizard.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Shaders\Chapter10\Chapter10-Refraction.shader" />
     <None Include="Assets\Shaders\Chapter10\Chapter10-Relection.shader" />
     <None Include="Assets\Shaders\Chapter6-BlinnPhong.shader" />
     <None Include="Assets\Shaders\Chapter6-DiffusePixelLevel.shader" />
