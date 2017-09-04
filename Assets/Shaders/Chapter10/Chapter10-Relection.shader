@@ -11,7 +11,7 @@ Shader"UnityStepBook/Chapter 10/Reflection"
         
     }
 
-        SubShader
+    SubShader
     {
         Tags{"RenderType" = "Opaque"  "Queue" = "Geometry"}
 
@@ -75,10 +75,12 @@ Shader"UnityStepBook/Chapter 10/Reflection"
 
                 fixed3 diffuse = _LightColor0.rgb*_Color.rgb*max(0, dot(worldNormal, worldLightDir));
 
+                // Use the reflect dir in world space to access the cubemap
                 fixed3 reflection = texCUBE(_Cubemap, i.worldRefl).rgb*_ReflectColor.rgb;
 
                 UNITY_LIGHT_ATTENUATION(atten, i, i.worldPos);
 
+                // Mix the diffuse color with the reflected color
                 fixed3 color = ambient + lerp(diffuse, reflection, _ReflectAmount)*atten;
 
                 return fixed4(color, 1.0);

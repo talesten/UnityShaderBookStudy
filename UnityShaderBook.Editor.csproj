@@ -120,6 +120,8 @@
     <Compile Include="Assets\Editor\Chapter10\RenderCubemapWizard.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Shaders\Chapter10\Chapter10-Fresnel.shader" />
+    <None Include="Assets\Shaders\Chapter10\Chapter10-Mirror.shader" />
     <None Include="Assets\Shaders\Chapter10\Chapter10-Refraction.shader" />
     <None Include="Assets\Shaders\Chapter10\Chapter10-Relection.shader" />
     <None Include="Assets\Shaders\Chapter6-BlinnPhong.shader" />
@@ -142,6 +144,8 @@
     <None Include="Assets\Shaders\Chapter9\Chapter9-AttenuationAndShadowUseBuiltInFunction.shader" />
     <None Include="Assets\Shaders\Chapter9\Chapter9-Shadow.shader" />
     <None Include="Assets\Shaders\Chapter9\Chatper9-ForwardRendering.shader" />
+    <None Include="Assets\Shaders\Common\BumpedDiffuse.shader" />
+    <None Include="Assets\Shaders\Common\BumpedSpecular.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
