@@ -117,19 +117,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="UnityShaderBook.csproj">
+      <Project>{CF344B54-4E16-AF9A-3B16-CB24EC59B612}</Project>
+      <Name>UnityShaderBook</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\Editor\Chapter10\RenderCubemapWizard.cs" />
+    <Compile Include="Assets\Editor\MeshRenderInspector.cs" />
+    <Compile Include="Assets\Editor\SetProperty\SetPropertyDrawerr.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\Chapter10\Chapter10-Fresnel.shader" />
+    <None Include="Assets\Shaders\Chapter10\Chapter10-GlassRefraction.shader" />
     <None Include="Assets\Shaders\Chapter10\Chapter10-Mirror.shader" />
     <None Include="Assets\Shaders\Chapter10\Chapter10-Refraction.shader" />
     <None Include="Assets\Shaders\Chapter10\Chapter10-Relection.shader" />
-    <None Include="Assets\Shaders\Chapter6-BlinnPhong.shader" />
-    <None Include="Assets\Shaders\Chapter6-DiffusePixelLevel.shader" />
-    <None Include="Assets\Shaders\Chapter6-DiffuseVertexLevel.shader" />
-    <None Include="Assets\Shaders\Chapter6-HalfLambert.shader" />
-    <None Include="Assets\Shaders\Chapter6-SpecularPixelLevel.shader" />
-    <None Include="Assets\Shaders\Chapter6-SpecularVertexLevel.shader" />
+    <None Include="Assets\Shaders\Chapter11\Chapter11-ImageSequenceAnimation.shader" />
+    <None Include="Assets\Shaders\Chapter6\Chapter6-BlinnPhong.shader" />
+    <None Include="Assets\Shaders\Chapter6\Chapter6-DiffusePixelLevel.shader" />
+    <None Include="Assets\Shaders\Chapter6\Chapter6-DiffuseVertexLevel.shader" />
+    <None Include="Assets\Shaders\Chapter6\Chapter6-HalfLambert.shader" />
+    <None Include="Assets\Shaders\Chapter6\Chapter6-SpecularPixelLevel.shader" />
+    <None Include="Assets\Shaders\Chapter6\Chapter6-SpecularVertexLevel.shader" />
     <None Include="Assets\Shaders\Chapter7\Chapter7-MaskTexture.shader" />
     <None Include="Assets\Shaders\Chapter7\Chapter7-NormalMapTangentSpace.shader" />
     <None Include="Assets\Shaders\Chapter7\Chapter7-NormalMapWorldSpace.shader" />

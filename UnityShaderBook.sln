@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityShaderBook", "UnityShaderBook.csproj", "{CF344B54-4E16-AF9A-3B16-CB24EC59B612}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityShaderBook.Editor", "UnityShaderBook.Editor.csproj", "{CE50E360-F302-9C8E-D134-5EAB8A99CB20}"
 EndProject
 Global
@@ -9,6 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF344B54-4E16-AF9A-3B16-CB24EC59B612}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF344B54-4E16-AF9A-3B16-CB24EC59B612}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF344B54-4E16-AF9A-3B16-CB24EC59B612}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF344B54-4E16-AF9A-3B16-CB24EC59B612}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CE50E360-F302-9C8E-D134-5EAB8A99CB20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CE50E360-F302-9C8E-D134-5EAB8A99CB20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE50E360-F302-9C8E-D134-5EAB8A99CB20}.Release|Any CPU.ActiveCfg = Release|Any CPU
