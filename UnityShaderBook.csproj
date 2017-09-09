@@ -80,6 +80,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Chapter10\ProceduralTextureGeneration.cs" />
     <Compile Include="Assets\Scripts\Helpers\SetPropertyAttribute.cs" />
+    <Compile Include="Assets\Scripts\Helpers\Translating.cs" />
     <Compile Include="Assets\Scripts\TestMaterial.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -88,7 +89,10 @@
     <None Include="Assets\Shaders\Chapter10\Chapter10-Mirror.shader" />
     <None Include="Assets\Shaders\Chapter10\Chapter10-Refraction.shader" />
     <None Include="Assets\Shaders\Chapter10\Chapter10-Relection.shader" />
+    <None Include="Assets\Shaders\Chapter11\Chapter11-Billboard.shader" />
     <None Include="Assets\Shaders\Chapter11\Chapter11-ImageSequenceAnimation.shader" />
+    <None Include="Assets\Shaders\Chapter11\Chapter11-ScollingBackground.shader" />
+    <None Include="Assets\Shaders\Chapter11\Chapter11-Water.shader" />
     <None Include="Assets\Shaders\Chapter6\Chapter6-BlinnPhong.shader" />
     <None Include="Assets\Shaders\Chapter6\Chapter6-DiffusePixelLevel.shader" />
     <None Include="Assets\Shaders\Chapter6\Chapter6-DiffuseVertexLevel.shader" />
