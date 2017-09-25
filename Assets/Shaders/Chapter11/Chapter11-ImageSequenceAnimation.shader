@@ -61,23 +61,23 @@
             return c;
             }
 
-                ENDCG
+            ENDCG
         }
 
-            // Pass to render object as a shadow caster
-                Pass{
-                Tags{ "LightMode" = "ShadowCaster" }
+        // Pass to render object as a shadow caster
+        Pass{
+            Tags{ "LightMode" = "ShadowCaster" }
 
-                CGPROGRAM
+            CGPROGRAM
 
-#pragma vertex vert
-#pragma fragment frag
+            #pragma vertex vert
+            #pragma fragment frag
 
-#pragma multi_compile_shadowcaster
+            #pragma multi_compile_shadowcaster
 
-#include "UnityCG.cginc"
+            #include "UnityCG.cginc"
 
-                float _Magnitude;
+            float _Magnitude;
             float _Frequency;
             float _InvWaveLength;
             float _Speed;
@@ -93,17 +93,14 @@
                 offset.yzw = float3(0.0, 0.0, 0.0);
                 offset.x = sin(_Frequency * _Time.y + v.vertex.x * _InvWaveLength + v.vertex.y * _InvWaveLength + v.vertex.z * _InvWaveLength) * _Magnitude;
                 v.vertex = v.vertex + offset;
-
                 TRANSFER_SHADOW_CASTER_NORMALOFFSET(o)
-
-                    return o;
+                return o;
             }
 
             fixed4 frag(v2f i) : SV_Target{
                 SHADOW_CASTER_FRAGMENT(i)
             }
-
-            ENDCG
+        ENDCG
         }
     }
 }
