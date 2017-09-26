@@ -33,15 +33,15 @@ Shader"UnityStepBook/Chapter12 /Edge Detection"{
 
                 half2 uv = v.texcoord;
 
-                o.uv[0] = uv + _MainTex_TexelSize.xy*half2(-1, -1);
-                o.uv[1] = uv + _MainTex_TexelSize.xy*half2(0, -1);
-                o.uv[2] = uv + _MainTex_TexelSize.xy*half2(1, -1);
-                o.uv[3] = uv + _MainTex_TexelSize.xy*half2(-1, 0);
-                o.uv[4] = uv + _MainTex_TexelSize.xy*half2(0, 0);
-                o.uv[5] = uv + _MainTex_TexelSize.xy*half2(1, 0);
-                o.uv[6] = uv + _MainTex_TexelSize.xy*half2(-1, 1);
-                o.uv[7] = uv + _MainTex_TexelSize.xy*half2(0, -1);
-                o.uv[8] = uv + _MainTex_TexelSize.xy*half2(1, 1);
+                o.uv[0] = uv + _MainTex_TexelSize.xy * half2(-1, -1);
+                o.uv[1] = uv + _MainTex_TexelSize.xy * half2(0, -1);
+                o.uv[2] = uv + _MainTex_TexelSize.xy * half2(1, -1);
+                o.uv[3] = uv + _MainTex_TexelSize.xy * half2(-1, 0);
+                o.uv[4] = uv + _MainTex_TexelSize.xy * half2(0, 0);
+                o.uv[5] = uv + _MainTex_TexelSize.xy * half2(1, 0);
+                o.uv[6] = uv + _MainTex_TexelSize.xy * half2(-1, 1);
+                o.uv[7] = uv + _MainTex_TexelSize.xy * half2(0, 1);
+                o.uv[8] = uv + _MainTex_TexelSize.xy * half2(1, 1);
 
                 return o;
             }
@@ -76,10 +76,10 @@ Shader"UnityStepBook/Chapter12 /Edge Detection"{
             fixed4 fragSobel(v2f i) :SV_Target{
                 half edge = Sobel(i);
 
-            fixed4 withEdgeColor = lerp(_EdgeColor, tex2D(_MainTex, i.uv[4]), edge);
-            fixed4 onlyEdgeColor = lerp(_EdgeColor, _BackgroundColor, edge);
+            fixed4 withEdgeColor = lerp(_EdgeColor, tex2D(_MainTex, i.uv[4]), edge);//edge越小 越可能是边缘 插值越接近_EdgeColor
+            fixed4 onlyEdgeColor = lerp(_EdgeColor, _BackgroundColor, edge);//edge越小 越可能是边缘 插值越接近_EdgeColor
             return lerp(withEdgeColor, onlyEdgeColor, _EdgeOnly);
-
+            //return withEdgeColor;
             }
 
             ENDCG

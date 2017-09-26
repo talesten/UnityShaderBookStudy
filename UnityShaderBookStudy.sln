@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityShaderBookStudy", "UnityShaderBookStudy.csproj", "{024619E5-0DE4-B3CD-4390-B5B0B4AF9464}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityShaderBookStudy.Editor", "UnityShaderBookStudy.Editor.csproj", "{3C49D437-4B7A-2B16-B1B4-03DED2379583}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{024619E5-0DE4-B3CD-4390-B5B0B4AF9464}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{024619E5-0DE4-B3CD-4390-B5B0B4AF9464}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{024619E5-0DE4-B3CD-4390-B5B0B4AF9464}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{024619E5-0DE4-B3CD-4390-B5B0B4AF9464}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C49D437-4B7A-2B16-B1B4-03DED2379583}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C49D437-4B7A-2B16-B1B4-03DED2379583}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C49D437-4B7A-2B16-B1B4-03DED2379583}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C49D437-4B7A-2B16-B1B4-03DED2379583}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
