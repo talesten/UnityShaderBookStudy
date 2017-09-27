@@ -140,6 +140,7 @@
     <None Include="Assets\Shaders\Chapter11\Chapter11-Water.shader" />
     <None Include="Assets\Shaders\Chapter12\Chapter12-BrightnessSaturationAndContrast.shader" />
     <None Include="Assets\Shaders\Chapter12\Chapter12-EdgeDetection.shader" />
+    <None Include="Assets\Shaders\Chapter12\Chapter12-GaussianBlur.shader" />
     <None Include="Assets\Shaders\Chapter6\Chapter6-BlinnPhong.shader" />
     <None Include="Assets\Shaders\Chapter6\Chapter6-DiffusePixelLevel.shader" />
     <None Include="Assets\Shaders\Chapter6\Chapter6-DiffuseVertexLevel.shader" />
