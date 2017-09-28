@@ -75,7 +75,7 @@ public class GaussianBlur : PostEffectsBase
 
             Graphics.Blit(src, buffer0);
 
-            for (int i = 0; i < iterations; i++)
+            for (int i = 0; i < iterations; i++)//迭代 叠加模糊
             {
                 material.SetFloat("_BlurSize", 1.0f + i * blurSpread);
 

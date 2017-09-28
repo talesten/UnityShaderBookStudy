@@ -9,7 +9,7 @@ Shader"UnityStepBook/Chapter 12/Gaussian Blur"{
     }
 
     SubShader{
-        CGINCLUDE//
+        CGINCLUDE// 类似cpp头文件 重复使用的代码放在这里
 
         #include "UnityCG.cginc"
 
@@ -28,7 +28,7 @@ Shader"UnityStepBook/Chapter 12/Gaussian Blur"{
 
             half2 uv = v.texcoord;
 
-            o.uv[0] = uv;
+            o.uv[0] = uv;//对领域2纹素单位采样 _BlurSize控制采样距离
             o.uv[1] = uv + float2(0.0, _MainTex_TexelSize.y*1.0)*_BlurSize;
             o.uv[2] = uv - float2(0.0, _MainTex_TexelSize.y*1.0)*_BlurSize;
             o.uv[3] = uv + float2(0.0, _MainTex_TexelSize.y*2.0)*_BlurSize;
@@ -43,7 +43,7 @@ Shader"UnityStepBook/Chapter 12/Gaussian Blur"{
             
             half2 uv = v.texcoord;
 
-            o.uv[0] = uv;
+            o.uv[0] = uv;//对领域2纹素单位采样 _BlurSize控制采样距离
             o.uv[1] = uv + float2(_MainTex_TexelSize.x*1.0, 0.0)*_BlurSize;
             o.uv[2] = uv - float2(_MainTex_TexelSize.x*1.0, 0.0)*_BlurSize;
             o.uv[3] = uv + float2(_MainTex_TexelSize.x*2.0, 0.0)*_BlurSize;
@@ -53,7 +53,7 @@ Shader"UnityStepBook/Chapter 12/Gaussian Blur"{
         }
 
         fixed4 fragBlur(v2f i) :SV_Target{
-            float weight[3] = { 0.4026, 0.2442, 0.0545 };
+            float weight[3] = { 0.4026, 0.2442, 0.0545 };//{ 0.2442, 0.0545, 0.4026, 0.2442, 0.0545 };由于对称性 只取3个权重 剩余两个迭代实现
 
         fixed3 sum = tex2D(_MainTex, i.uv[0]).rgb*weight[0];
 
@@ -73,7 +73,7 @@ Shader"UnityStepBook/Chapter 12/Gaussian Blur"{
             NAME "GAUSSIAN_BLUR_VERTICAL"
 
             CGPROGRAM
-            #pragma vertex vertBlurVertical
+            #pragma vertex vertBlurVertical//会自动调用CGINCLUDE中对应的函数
             #pragma fragment fragBlur
             ENDCG
 

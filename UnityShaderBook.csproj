@@ -79,9 +79,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Chapter10\ProceduralTextureGeneration.cs" />
+    <Compile Include="Assets\Scripts\Chapter12\Bloom.cs" />
     <Compile Include="Assets\Scripts\Chapter12\BrightnessSaturationAndContrast.cs" />
     <Compile Include="Assets\Scripts\Chapter12\EdgeDetection.cs" />
     <Compile Include="Assets\Scripts\Chapter12\GaussianBlur.cs" />
+    <Compile Include="Assets\Scripts\Chapter12\MotionBlur.cs" />
     <Compile Include="Assets\Scripts\Chapter12\PostEffectsBase.cs" />
     <Compile Include="Assets\Scripts\Helpers\SetPropertyAttribute.cs" />
     <Compile Include="Assets\Scripts\Helpers\Translating.cs" />
@@ -98,9 +100,11 @@
     <None Include="Assets\Shaders\Chapter11\Chapter11-ScollingBackground.shader" />
     <None Include="Assets\Shaders\Chapter11\Chapter11-VertexAnimationWithShadow.shader" />
     <None Include="Assets\Shaders\Chapter11\Chapter11-Water.shader" />
+    <None Include="Assets\Shaders\Chapter12\Chapter12-Bloom.shader" />
     <None Include="Assets\Shaders\Chapter12\Chapter12-BrightnessSaturationAndContrast.shader" />
     <None Include="Assets\Shaders\Chapter12\Chapter12-EdgeDetection.shader" />
     <None Include="Assets\Shaders\Chapter12\Chapter12-GaussianBlur.shader" />
+    <None Include="Assets\Shaders\Chapter12\Chapter12-MotionBlur.shader" />
     <None Include="Assets\Shaders\Chapter6\Chapter6-BlinnPhong.shader" />
     <None Include="Assets\Shaders\Chapter6\Chapter6-DiffusePixelLevel.shader" />
     <None Include="Assets\Shaders\Chapter6\Chapter6-DiffuseVertexLevel.shader" />

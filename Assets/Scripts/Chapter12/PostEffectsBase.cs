@@ -11,7 +11,7 @@ public class PostEffectsBase : MonoBehaviour
     {
         bool isSupported = CheckSupport();
 
-        if (isSupported)
+        if (isSupported==false)
         {
             NotSupported();
         }
