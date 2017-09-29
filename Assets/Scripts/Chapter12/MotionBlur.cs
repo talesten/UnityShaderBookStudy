@@ -29,26 +29,31 @@ public class MotionBlur : PostEffectsBase
 
     void OnRenderImage(RenderTexture src, RenderTexture dest)
     {
+        //Debug.Log("OnRenderImage-----------------------");
+        //if (material != null)
+        //{
+        //    if (accumulationTexture == null || accumulationTexture.width != src.width || accumulationTexture.height != src.height)
+        //    {
+        //        DestroyImmediate(accumulationTexture);
+        //        accumulationTexture = new RenderTexture(src.width, src.height, 0);
+        //        accumulationTexture.hideFlags = HideFlags.HideAndDontSave;//自己控制该变量的销毁
+        //        Graphics.Blit(src, accumulationTexture);
+        //    }
 
-        if (material != null)
+        //    accumulationTexture.MarkRestoreExpected();//表明需要进行渲染纹理的恢复操作
+        //    material.SetFloat("_BlurAmount", 1.0f - blurAmount);
+
+        //    Graphics.Blit(src, accumulationTexture, material);
+        //    Graphics.Blit(accumulationTexture, dest);
+        //}
+        //else
         {
-            if (accumulationTexture == null||accumulationTexture.width!=src.width||accumulationTexture.height!=src.height)
-            {
-                DestroyImmediate(accumulationTexture);
-                accumulationTexture = new RenderTexture(src.width, src.height, 0);
-                accumulationTexture.hideFlags = HideFlags.HideAndDontSave;
-                Graphics.Blit(src, accumulationTexture);
-            }
+            RenderTexture buffer1 = RenderTexture.GetTemporary(src.width, src.height, 0);
+            Graphics.Blit(src, buffer1, material);
+            Graphics.Blit(buffer1, dest);
+            RenderTexture.ReleaseTemporary(buffer1);
 
-            accumulationTexture.MarkRestoreExpected();
-            material.SetFloat("_BlurAmount", 1.0f - blurAmount);
-
-            Graphics.Blit(src, accumulationTexture, material);
-            Graphics.Blit(accumulationTexture, dest);
-        }
-        else
-        {
-            Graphics.Blit(src, dest);
+            //Graphics.Blit(src, dest);
         }
     }
 }

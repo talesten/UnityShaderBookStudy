@@ -21,10 +21,8 @@ Shader"UnityStepBook/Chapter 12/Motion Blur"{
 
         v2f vert(appdata_img v) {
             v2f o;
-            
             o.pos = UnityObjectToClipPos(v.vertex);
             o.uv = v.texcoord;
-
             return o;
         }
 
@@ -33,28 +31,26 @@ Shader"UnityStepBook/Chapter 12/Motion Blur"{
         }
 
         half4 fragA(v2f i) : SV_Target{
-            return tex2D(_MainTex,i.uv);
+            return tex2D(_MainTex,i.uv);//ColorMask A 因此只会输出A值
         }
-
         ENDCG
 
         ZTest Always Cull Off ZWrite  Off
 
         Pass {
             Blend SrcAlpha OneMinusSrcAlpha
-            ColorMask RGB
+            //Blend SrcAlpha OneMinusDstAlpha
+            ColorMask G           //只输出rgb通道 
 
             CGPROGRAM
-
             #pragma vertex vert
             #pragma fragment fragRGB
-
             ENDCG
         }
 
         Pass {
             Blend One  Zero
-            ColorMask A
+            ColorMask R        //只输出片元产生的颜色的a通道
 
             CGPROGRAM
             #pragma vertex vert
