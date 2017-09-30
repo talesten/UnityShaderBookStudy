@@ -38,9 +38,9 @@ Shader"UnityStepBook/Chapter 12/Motion Blur"{
         ZTest Always Cull Off ZWrite  Off
 
         Pass {
-            Blend SrcAlpha OneMinusSrcAlpha
+            Blend SrcAlpha OneMinusSrcAlpha//0.1 0.9
             //Blend SrcAlpha OneMinusDstAlpha
-            ColorMask G           //只输出rgb通道 
+            ColorMask RGB           //只输出rgb通道 
 
             CGPROGRAM
             #pragma vertex vert
@@ -50,7 +50,7 @@ Shader"UnityStepBook/Chapter 12/Motion Blur"{
 
         Pass {
             Blend One  Zero
-            ColorMask R        //只输出片元产生的颜色的a通道
+            ColorMask A        //只输出片元产生的颜色的a通道//确保渲染纹理的a值始终是原图像的a值
 
             CGPROGRAM
             #pragma vertex vert
