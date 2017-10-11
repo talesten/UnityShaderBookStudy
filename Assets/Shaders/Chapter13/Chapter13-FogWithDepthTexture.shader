@@ -73,6 +73,7 @@ Shader"UnityStepBook/Chapter 13/Fog With Depth Texture"{
             float3 worldPos = _WorldSpaceCameraPos + linearDepth*i.interpolatedRay.xyz;
 
             float fogDensity = (_FogEnd - worldPos.y) / (_FogEnd - _FogStart);
+
             fogDensity = saturate(fogDensity*_FogDensity);
 
             fixed4 finalColor = tex2D(_MainTex, i.uv);

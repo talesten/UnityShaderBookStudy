@@ -143,6 +143,7 @@
     <None Include="Assets\Shaders\Chapter12\Chapter12-EdgeDetection.shader" />
     <None Include="Assets\Shaders\Chapter12\Chapter12-GaussianBlur.shader" />
     <None Include="Assets\Shaders\Chapter12\Chapter12-MotionBlur.shader" />
+    <None Include="Assets\Shaders\Chapter13\Chapter13-EdgeDetectNormalAndDepth.shader" />
     <None Include="Assets\Shaders\Chapter13\Chapter13-FogWithDepthTexture.shader" />
     <None Include="Assets\Shaders\Chapter13\Chapter13-MotionBlurWithDepthTexture.shader" />
     <None Include="Assets\Shaders\Chapter6\Chapter6-BlinnPhong.shader" />
@@ -165,6 +166,7 @@
     <None Include="Assets\Shaders\Chapter9\Chapter9-AttenuationAndShadowUseBuiltInFunction.shader" />
     <None Include="Assets\Shaders\Chapter9\Chapter9-Shadow.shader" />
     <None Include="Assets\Shaders\Chapter9\Chatper9-ForwardRendering.shader" />
+    <None Include="Assets\Shaders\Chpater14\Chapter14-ToonShading.shader" />
     <None Include="Assets\Shaders\Common\BumpedDiffuse.shader" />
     <None Include="Assets\Shaders\Common\BumpedSpecular.shader" />
   </ItemGroup>
