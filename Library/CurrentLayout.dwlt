@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 321}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1680
     height: 968
-  m_MinSize: {x: 950, y: 321}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -130,8 +130,8 @@ MonoBehaviour:
     y: 0
     width: 204
     height: 918
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -297,7 +297,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: b272fcffaa2efdffac2efdff8035fdff1637fdffee39fdff543bfdff9a41fdff6067fdff6e67fdfff080fdfff280fdfff0ccfdff72cffdff74cffdff9c34feff02bdfeff30a4ffffe2fbffffe4fbffff00000000182d0000
+    m_ExpandedIDs: e4fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -400,7 +400,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: ac240000
     m_LastClickedID: 9388
-    m_ExpandedIDs: 00000000202500004c25000090250000a2250000e8250000f22500004c2600008426000092260000a2260000ec26000020270000c82700003428000036280000
+    m_ExpandedIDs: 000000002625000052250000862500008c250000002600000e260000722600007e260000de260000102700002e27000068270000a82700001c280000be280000c0280000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -425,24 +425,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 261}
+    scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000202500004c2500007a250000e8250000f22500004c260000a2260000ec26000020270000ba270000342800003628000008290000e62c0000f82c00005a2e0000
+    m_ExpandedIDs: 000000002625000052250000862500008c250000002600000e260000722600007e260000de260000102700002e27000068270000a82700001c280000be280000c0280000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: BurnHelper
-      m_OriginalName: BurnHelper
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 11870
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 7}
     m_SearchString: 
@@ -618,11 +618,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.18257958, y: 0.111827455, z: -0.020906057, w: -0.97658706}
     speed: 2
-    m_Value: {x: -0.18257958, y: 0.111827455, z: -0.020906057, w: -0.97658706}
+    m_Value: {x: -0.18257959, y: 0.111827455, z: -0.02090606, w: -0.9765871}
   m_Size:
-    m_Target: 4.6625996
+    m_Target: 3.4625993
     speed: 2
-    m_Value: 4.6625996
+    m_Value: 3.4625993
   m_Ortho:
     m_Target: 0
     speed: 2

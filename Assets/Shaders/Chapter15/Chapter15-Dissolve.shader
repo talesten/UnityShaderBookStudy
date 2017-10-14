@@ -80,9 +80,9 @@ Shader"UnityStepBook/Chapter 15/Dissovle"{
 
             fixed4 frag(v2f i) :SV_Target{
 
-                fixed3 burn = tex2D(_BurnMap, i.uvBurnMap).rgb;//burnmap
+                fixed3 burn = tex2D(_BurnMap, i.uvBurnMap).rgb;//burnmap:噪声纹理 控制燃烧(溶解)位置 
 
-                clip(burn.r - _BurnAmount);
+                clip(burn.r - _BurnAmount);//结果小于0 剔除颜色
 
                 float3 tangentLightDir = normalize(i.lightDir);
                 fixed3 tangentNormal = UnpackNormal(tex2D(_BumpMap, i.uvBumpMap));
@@ -93,13 +93,15 @@ Shader"UnityStepBook/Chapter 15/Dissovle"{
 
                 fixed3 diffuse = _LightColor0.rgb*albedo*max(0, dot(tangentNormal, tangentLightDir));
 
+                //t=0:正常颜色 t=1:消融边界处  其余插值
                 fixed t = 1 - smoothstep(0.0, _LineWidth, burn.r - _BurnAmount);
+
                 fixed3 burnColor = lerp(_BurnFirstColor, _BurnSecondColor, t);
                 burnColor = pow(burnColor, 5);
 
                 UNITY_LIGHT_ATTENUATION(atten, i, i.worldPos);
 
-                fixed3 finalColor = lerp(ambient + diffuse*atten, burnColor, t*step(0.0001, _BurnAmount));
+                fixed3 finalColor = lerp(ambient + diffuse*atten, burnColor, t*step(0.0001, _BurnAmount));//step(a,x)返回 (x >= a) ? 1 : 0 。
 
                 return fixed4(finalColor, 1.0);
             }
