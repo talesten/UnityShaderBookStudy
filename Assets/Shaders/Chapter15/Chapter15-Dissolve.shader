@@ -82,7 +82,7 @@ Shader"UnityStepBook/Chapter 15/Dissovle"{
 
                 fixed3 burn = tex2D(_BurnMap, i.uvBurnMap).rgb;//burnmap:噪声纹理 控制燃烧(溶解)位置 
 
-                clip(burn.r - _BurnAmount);//结果小于0 剔除颜色
+                clip(burn.r - _BurnAmount);//结果小于0 剔除颜色 _BurnAmount越大 溶解的越多
 
                 float3 tangentLightDir = normalize(i.lightDir);
                 fixed3 tangentNormal = UnpackNormal(tex2D(_BumpMap, i.uvBumpMap));
