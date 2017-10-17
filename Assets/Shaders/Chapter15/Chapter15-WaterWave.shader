@@ -89,16 +89,16 @@ Shader"UnityStepBook/Chapter 15/Water Wave"{
                     fixed3 bump = normalize(bump1 + bump2);
 
                     float2 offset = bump.xy * _Distortion * _RefractionTex_TexelSize.xy;
-                    i.srcPos.xy = offset*i.srcPos.z + i.srcPos.xy;
-                    fixed3 refrCol = tex2D(_RefractionTex, i.srcPos.xy / i.srcPos.w).rgb;
+                    i.srcPos.xy = offset*i.srcPos.z + (i.srcPos.xy+0.3);
+                    fixed3 refrCol = tex2D(_RefractionTex, i.srcPos.xy / i.srcPos.w).rgb;//折射
 
                     bump = normalize(half3(dot(i.TtoW0.xyz, bump), dot(i.TtoW1.xyz, bump), dot(i.TtoW2.xyz, bump)));
                     fixed4 texColor = tex2D(_MainTex, i.uv.xy + speed);
                     fixed3 refDir = reflect(-viewDir, bump);
                     fixed3 reflCol = texCUBE(_Cubemap, refDir).rgb*texColor.rgb*_Color.rgb;
 
-                    fixed fresnel = pow(1 - saturate(dot(viewDir, bump)), 4);
-                    fixed3 finalColor = reflCol*fresnel + refrCol*(1 - fresnel);
+                    fixed fresnel = pow(1 - saturate(dot(viewDir, bump)), 4);//菲涅尔反射
+                    fixed3 finalColor = reflCol*fresnel + refrCol*(1 - fresnel);//混合反射+折射值
 
                     return fixed4(finalColor, 1);
                 }
