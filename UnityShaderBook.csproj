@@ -89,6 +89,7 @@
     <Compile Include="Assets\Scripts\Chapter13\FogWithDepthTexture.cs" />
     <Compile Include="Assets\Scripts\Chapter13\MotionBlurWithDepthTexture.cs" />
     <Compile Include="Assets\Scripts\Chapter15\BurnHelper.cs" />
+    <Compile Include="Assets\Scripts\Chapter15\FogWithNoise.cs" />
     <Compile Include="Assets\Scripts\Helpers\SetPropertyAttribute.cs" />
     <Compile Include="Assets\Scripts\Helpers\TestMaterial.cs" />
     <Compile Include="Assets\Scripts\Helpers\Translating.cs" />
@@ -115,6 +116,7 @@
     <None Include="Assets\Shaders\Chapter14\Chapter14-Hatching.shader" />
     <None Include="Assets\Shaders\Chapter14\Chapter14-ToonShading.shader" />
     <None Include="Assets\Shaders\Chapter15\Chapter15-Dissolve.shader" />
+    <None Include="Assets\Shaders\Chapter15\Chapter15-FogWithNoise.shader" />
     <None Include="Assets\Shaders\Chapter15\Chapter15-WaterWave.shader" />
     <None Include="Assets\Shaders\Chapter6\Chapter6-BlinnPhong.shader" />
     <None Include="Assets\Shaders\Chapter6\Chapter6-DiffusePixelLevel.shader" />

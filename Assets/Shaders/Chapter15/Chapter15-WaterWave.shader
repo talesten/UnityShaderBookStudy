@@ -14,7 +14,7 @@ Shader"UnityStepBook/Chapter 15/Water Wave"{
         SubShader{
             Tags{"Queue" = "Transparent" "RenderType" = "Opaque"}
             
-            GrabPass{"_RefractionTex"}
+            GrabPass{"_RefractionTex"}//捕获物体所在位置的屏幕的内容并写入到一个纹理中
 
             Pass{
                 Tags{"LightMode" = "ForwardBase"}
@@ -89,8 +89,8 @@ Shader"UnityStepBook/Chapter 15/Water Wave"{
                     fixed3 bump = normalize(bump1 + bump2);
 
                     float2 offset = bump.xy * _Distortion * _RefractionTex_TexelSize.xy;
-                    i.srcPos.xy = offset*i.srcPos.z + (i.srcPos.xy+0.3);
-                    fixed3 refrCol = tex2D(_RefractionTex, i.srcPos.xy / i.srcPos.w).rgb;//折射
+                    i.srcPos.xy = offset*i.srcPos.z + (i.srcPos.xy);
+                    fixed3 refrCol = tex2D(_RefractionTex, i.srcPos.xy / i.srcPos.w).rgb;//折射 除以w转为齐次坐标
 
                     bump = normalize(half3(dot(i.TtoW0.xyz, bump), dot(i.TtoW1.xyz, bump), dot(i.TtoW2.xyz, bump)));
                     fixed4 texColor = tex2D(_MainTex, i.uv.xy + speed);
