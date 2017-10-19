@@ -56,16 +56,16 @@ Shader"UnityStepBook/Chapter 15/Fog With Noise"{
             int index = 0;
             if (v.texcoord.x < 0.5&&v.texcoord.y < 0.5){
                 index = 0;
-            }
+            }//左下
             else if (v.texcoord.x > 0.5&&v.texcoord.y < 0.5) {
                 index = 1;
-            }
+            }//右下
             else if (v.texcoord.x > 0.5&&v.texcoord.y>0.5) {
                 index = 2;
-            }
+            }//右上
             else {
                 index = 3;
-            }
+            }//左上
 
             #if UNITY_UV_STARTS_AT_TOP
             if (_MainTex_TexelSize.y < 0)
@@ -79,12 +79,12 @@ Shader"UnityStepBook/Chapter 15/Fog With Noise"{
 
         fixed4 frag(v2f i) :SV_Target{
             float linearDepth = LinearEyeDepth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture,i.uv_depth));
-            float3 worldPos = _WorldSpaceCameraPos + linearDepth*i.interpolatedRay.xyz;
+            float3 worldPos = _WorldSpaceCameraPos + linearDepth*i.interpolatedRay.xyz;//通过世界空间内摄像机位置得到像素位置
 
             float2 speed = _Time.y*float2(_FogXSpeed, _FogYSpeed);
             float noise = (tex2D(_NoiseTex, i.uv + speed).r - 0.5)*_NoiseAmount;
 
-            float fogDensity = (_FogEnd - worldPos.y) / (_FogEnd - _FogStart);
+            float fogDensity = (_FogEnd - worldPos.y) / (_FogEnd - _FogStart);//雾浓度
             fogDensity = saturate(fogDensity*_FogDensity*(1 + noise));
 
             fixed4 finalColor = tex2D(_MainTex, i.uv);
