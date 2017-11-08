@@ -79,9 +79,6 @@
     <Reference Include="nunit.framework">
       <HintPath>Library\UnityAssemblies\nunit.framework.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.TreeEditor">
-      <HintPath>Library\UnityAssemblies\UnityEditor.TreeEditor.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
     </Reference>
@@ -153,6 +150,7 @@
     <None Include="Assets\Shaders\Chapter15\Chapter15-WaterWave.shader" />
     <None Include="Assets\Shaders\Chapter17\Chapter17-BumpedDiffuse.shader" />
     <None Include="Assets\Shaders\Chapter17\Chapter17-NormalExtrusion.shader" />
+    <None Include="Assets\Shaders\Chapter18\SimpleBlend.shader" />
     <None Include="Assets\Shaders\Chapter6\Chapter6-BlinnPhong.shader" />
     <None Include="Assets\Shaders\Chapter6\Chapter6-DiffusePixelLevel.shader" />
     <None Include="Assets\Shaders\Chapter6\Chapter6-DiffuseVertexLevel.shader" />
